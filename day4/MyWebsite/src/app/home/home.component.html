@@ -1,0 +1,37 @@
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1"> {{ pageName }} </span>
+</nav>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+          <div class="col-md-4">
+            <label for="Variable 1">Enter First Value</label>
+            <input type="number" class="form-control" [(ngModel)]="variableOne">
+          </div>
+          <br/>
+          <div class="col-md-4">
+            <select class="form-control" [(ngModel)]="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+          </div> 
+          <br/>
+          <div class="col-md-4">
+            <label for="Variable 2">Enter Second Value</label>
+            <input type="number" class="form-control" [(ngModel)]="variableTwo">
+          </div>
+          <br/>  
+          <div>
+            <div class="col-md-1">
+                <button class="btn btn-primary pull-left" (click)="process()">Submit</button>
+            </div>
+            <div class="col-md-3">
+                <label for="answer">Answer</label>
+                <input type="text" class="form-control" [(ngModel)]="answer" disabled>
+            </div>
+        </div> 
+      </div>
+    </div>
+  </div>
