@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'app-home',
@@ -11,10 +12,15 @@ export class HomeComponent implements OnInit {
   variableTwo: number = null;
   answer: number = null;
   operator: any;
-
-  constructor() { }
+  apiResponse: [ApiResponseType];
+  constructor(
+    private homeService: HomeService
+  ) { }
 
   ngOnInit(): void {
+    this.homeService.fetchResponse().subscribe(data =>{
+      this.apiResponse = data;
+    })
   }
 
   process() {
